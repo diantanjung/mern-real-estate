@@ -1,5 +1,5 @@
 import { Await, useLoaderData } from "react-router-dom";
-import Card from "../../components/card/card";
+import Card from "../../components/card/Card";
 import Filter from "../../components/filter/Filter";
 import Map from "../../components/map/Map";
 import { listData } from "../../lib/dummydata";

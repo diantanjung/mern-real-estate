@@ -18,6 +18,8 @@ import {
   profilePageLoader,
   singlePageLoader,
 } from "./lib/loaders";
+import AboutPage from "./routes/aboutPage/aboutPage";
+import ContactPage from "./routes/contactPage/contactPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -47,6 +49,14 @@ function App() {
         {
           path: "login",
           element: <Login />,
+        },
+        {
+          path: "about",
+          element: <AboutPage />,
+        },
+        {
+          path: "contact",
+          element: <ContactPage />,
         },
       ],
     },

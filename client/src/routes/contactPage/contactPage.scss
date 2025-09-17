@@ -1,0 +1,174 @@
+@use "../../responsive.scss" as *;
+@use "sass:color";
+
+$primary-color: #2f2f2f;
+$secondary-color: #6a6a6a;
+$input-border-color: #e0e0e0;
+$input-bg-color: #fafafa;
+$button-bg-color: #0061e0;
+$button-text-color: white;
+$error-color: #ff0000;
+
+.contactPage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      height: 100%;
+
+      @include lg {
+        padding-right: 50px;
+      }
+
+      @include md {
+        padding: 0;
+      }
+
+      @include sm {
+        justify-content: flex-start;
+      }
+
+      .title {
+        font-size: 36px;
+
+        @include lg {
+          font-size: 48px;
+        }
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 2;
+    background-color: #f4f9ff;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include md {
+      display: none;
+    }
+
+    img {
+      width: 108%;
+      position: absolute;
+      right: 0;
+
+      @include lg {
+        width: 105%;
+      }
+    }
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+
+    .input-group-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      flex: 1;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        color: $primary-color;
+        margin-bottom: 8px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: 1px solid $input-border-color;
+        border-radius: 6px;
+        background-color: $input-bg-color;
+        transition: border-color 0.2s ease-in-out;
+        appearance: none;
+
+        &:focus {
+          outline: none;
+          border-color: color.adjust($input-border-color, $lightness: -15%);;
+          box-shadow: 0 0 0 3px rgba(53, 100, 230, 0.2);
+        }
+      }
+
+      .error-message {
+        font-size: 12px;
+        color: $error-color;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: "!";
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-color: $error-color;
+          color: #fff;
+          font-weight: bold;
+          font-size: 10px;
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .privacy-notice {
+      font-size: 14px;
+      color: $secondary-color;
+      margin-bottom: 30px;
+
+      span {
+        color: $primary-color;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .submit-button {
+      background-color: $button-bg-color;
+      color: $button-text-color;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: color.adjust($button-bg-color, $lightness: -5%);
+      }
+
+      &:active {
+        background-color: color.adjust($button-bg-color, $lightness: -10%);
+      }
+    }
+  }
+}

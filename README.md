@@ -16,18 +16,18 @@ I built a modern real estate agent portfolio website designed to showcase proper
 -   **Contact Page** 
 -   **Login Required Feature** 
     - **Profile Page:** 
-    - **Post Real Estade**
+    - **CRUD/Manage Real Estade Postings**
     - **Chat with Agent** 
 
 ## 💻 Technologies Used
 
 This project is crafted using a robust and highly sought-after modern web development stack:
 
--   **Mongo DB** 
--   **Express** 
+-   **Mongo DB with Supabase** 
+-   **Express.js** 
 -   **React.js** 
 -   **SCSS** 
--   **Socket.IO** 
+-   **Socket.io** 
 
 ## 🌐 Connect with Me
 
